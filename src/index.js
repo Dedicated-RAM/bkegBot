@@ -31,10 +31,15 @@ for (const folder of functionFolders) {
         require(`./functions/${folder}/${file}`)(client);
 }
 
+
+
 client.handleEvents();
 client.handleCommands();
 client.handleComponents();
 client.login(token);
+
 (async() => { // MongoDB login
     await connect(databaseToken).catch(console.error);
-});
+})();
+
+//1039378120790265996
