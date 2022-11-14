@@ -1,24 +1,11 @@
 const mongoose = require("mongoose");
 const levels = require("../schemas/profiles");
 var mongoUrl;
-// https://github.com/MrAugu/discord-xp
+
+// Credit --> https://github.com/MrAugu/discord-xp
+// Modified for use in bkegBot
+
 class DiscordXp {
-
-  /**
-  * @param {string} [dbUrl] - A valid mongo database URI.
-  */
-
-/* Not needed, mongoose connected on boot
-  static async setURL(dbUrl) {
-    if (!dbUrl) throw new TypeError("A database url was not provided.");
-    mongoUrl = dbUrl;
-    return mongoose.connect(dbUrl, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false
-    });
-  }
-*/
 
   /**
   * @param {string} [userId] - Discord user id.
