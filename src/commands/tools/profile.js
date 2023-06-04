@@ -23,7 +23,6 @@ module.exports = {
         const userData = await Levels.fetch(user.id, interaction.guildId);
         // xpFor(user.level + 1)
 
-        
         const levelEmbed = new EmbedBuilder()
             .setColor(0xFFFFFF)
             .setTitle(`${user.username}'s Profile`)
@@ -38,7 +37,5 @@ module.exports = {
         await interaction.editReply({
             embeds: [levelEmbed]
         });
-        
-
     }
 }

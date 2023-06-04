@@ -20,6 +20,7 @@ module.exports = (client) => {
         }
 
         const clientID = '1004183917986840636'; // botID aka ApplicationID
+        const guildID = '1038677522403045507'; // guildID aka GuildID
         
         const rest = new REST({ version: '10' }).setToken(process.env.token);
 

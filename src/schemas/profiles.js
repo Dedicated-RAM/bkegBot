@@ -5,7 +5,7 @@ const profileSchema = new Schema({
     profileIcon: { type: String, required: false },
     xp: { type: Number, default: 0 },
     level: { type: Number, default: 0 },
-    currency: { type: Number, default: 0},
+    currency: { type: Number, default: 0 },
     lastUpdated: { type: Date, default: new Date() }
 });
 

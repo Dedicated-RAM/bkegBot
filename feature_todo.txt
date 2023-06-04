@@ -1,0 +1,79 @@
+level roles
+
+crate drops
+    - give experience based on crate type
+    - give currency based on crate type
+    - very rare chance to give a specific achivement
+
+currency + shop
+    - users get currency for being active, along with Levels
+    - currency can be used for giveaways, shop items, etc (more to come)
+
+giveaways
+    - subcommands:
+        - create giveaway [name] [description] [time] [currency cost] [max entries]
+            - stores giveaway in database and in cache
+            - enter giveaway button will display cost on it
+                - will send ephemeral message confirming entry
+                    - will make note of how many entries user has left
+                - if user does not have enough currency, will send ephemeral message saying so
+        - end giveaway [name]
+            - picks winner and sends message to channel
+            - removes giveaway from database and cache
+        - close giveaway [name]
+            - blocks any new entries
+        - delete giveaway [name]
+            - removes giveaway from database and cache
+            - also ask about refunding giveaway entries
+            - ask are you sure before deleting, and state that this is not the same as end giveaway
+        - list giveaways
+            - lists all giveaways in database
+        - refund giveaway [name]
+            - refunds all entries for giveaway
+            - ask are you sure before refunding
+    - track currency spent by each user for giveaway in case of a refund
+
+weekly raffle
+    - will be hosted in a specific channel
+        - will use button to enter
+    - graphic will show contestants and the prize pool
+    - raffle will be drawn at the end of the week
+    - tickets can be bought with currency
+    - there will be a randomly generated ticket price per week, stored at the top of the txt file
+    - ticket purchases will be stored in a txt file with each person's userid
+    - subcommands:
+        - close raffle
+            - blocks any new entries
+        - refund raffle
+            - refunds all entries for raffle
+            - ask are you sure before refunding
+
+achievements
+    - see achievements on profile page
+    - games can give achievements in discord bot?
+    - achievements for winning community events
+    - sub commands for administrators:
+        - create achievement [name] [description] [image/emoji?]
+            - stores achivement in database and in cache
+        - give achievement [achievement name] [user]
+            - achievement name will autofill with all possible achievements
+        - remove achievement [achievement name] [user]
+            - achievement name will autofill with all possible achievements
+        - delete achievement [achievement name]
+            - removes achievement from database and cache
+            - ask are you sure before deleting, and state that this is not the same as remove achivement
+        - list achievements
+            - lists all achievements in database
+
+creations submission
+    - submission page
+    - upvote/downvote
+        - score based on upvotes/downvotes
+        - gain an upvote = gain experience for Levels
+        - achievements for reaching specific upvote milestones
+    
+live stream functionality
+    - mentions stream notif role when live stream is active
+    - clicking on live stream link will reward users with experience ?
+        - only works once per stream
+    - can use channel points to buy more experience / get achievements / enter giveaway

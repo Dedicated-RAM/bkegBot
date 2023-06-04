@@ -15,7 +15,6 @@ https://discord.com/developers/docs/topics/gateway#list-of-intents
 */
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMessageReactions] });
 
-
 client.commands = new Collection();
 client.buttons = new Collection();
 client.selectMenus = new Collection();
@@ -30,8 +29,6 @@ for (const folder of functionFolders) {
     for (const file of functionFiles) 
         require(`./functions/${folder}/${file}`)(client);
 }
-
-
 
 client.handleEvents();
 client.handleCommands();
